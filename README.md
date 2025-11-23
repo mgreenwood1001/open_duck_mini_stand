@@ -2,6 +2,9 @@
 
 This is an OpenSCAD-based design for the Open Duck Mini stand.
 
+<img width="2014" height="1010" alt="Screenshot 2025-11-23 at 7 31 39 AM" src="https://github.com/user-attachments/assets/30a57471-5f72-4932-8f05-b80857069486" />
+
+
 ## Overview
 
 This stand is designed for the Open Duck Mini and consists of four main components that can be 3D printed separately and assembled together.
