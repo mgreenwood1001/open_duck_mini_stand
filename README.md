@@ -1,7 +1,7 @@
 # Open Duck Mini Stand
 
 This is an OpenSCAD-based design for the Open Duck Mini stand.
-<img width="2022" height="1058" alt="Screenshot 2025-11-23 at 7 51 10 AM" src="https://github.com/user-attachments/assets/bdc69499-dcce-43d0-89ea-942ca6d6f837" />
+<img width="2050" height="1106" alt="Screenshot 2025-11-23 at 7 54 45 AM" src="https://github.com/user-attachments/assets/582e6a10-6b48-4e6c-973b-b18c9bcf7075" />
 
 [3mf](stand.3mf)
 
