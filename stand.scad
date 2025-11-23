@@ -278,14 +278,27 @@ module foot_rest() {
         translate([39,5,-16]) #m3();
         translate([12,155,-16]) #m3();
         translate([39,155,-16]) #m3();
+        
+        // engraving
+        engrave_robot();
     }
 }
 
-frame();
-translate([-54,0,0]) foot_rest();
-translate([128,0,0]) foot_rest();
-translate([56.5,12,71]) {
-    mid_brace();
+// Engraving module
+module engrave_robot() {
+
+    // adjust size and placement until it fits your rectangle
+    translate([-12, 42, 4.5])   // move position on plate
+    linear_extrude(height=1)  // depth of engraving
+        scale([1.1,1.1])       // shrink SVG to fit
+            import("duck.svg");
 }
-translate([9,0,190]) top();
-translate([0,150,0]) frame();
+
+//frame();
+translate([-54,0,0]) foot_rest();
+//translate([128,0,0]) foot_rest();
+translate([56.5,12,71]) {
+//    mid_brace();
+}
+//ranslate([9,0,190]) top();
+//translate([0,150,0]) frame();
