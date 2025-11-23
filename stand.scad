@@ -248,9 +248,9 @@ module mid_brace() {
         cube([15,140,40]);
         rotate([90,0,0]) translate([7.5,26,-220]) {
             $fn=120;
-            #cylinder(d=3,h=300);
+            #cylinder(d=2.8,h=300);
             translate([0,-12,0])
-            #cylinder(d=3,h=300);
+            #cylinder(d=3.2,h=300);
             
             // Top and Bottom cut outs
             translate([0,15,80]) cylinder(d=10, h=140);
@@ -258,15 +258,16 @@ module mid_brace() {
             
         }
         rotate([0,90,0]) translate([-29,12,0]) {
-            #rounded_right_triangle(base=18, height=25, r=6, h=15); 
+            translate([0,3,0])
+            #rounded_right_triangle(base=18, height=22, r=6, h=15); 
             rotate([180,0,-90]) translate([-50,-18,-15])
             #rounded_right_triangle(base=22, height=18, r=6, h=15); 
             
             rotate([180,180,-90]) translate([66,-18,0])
             #rounded_right_triangle(base=22, height=18, r=6, h=15); 
             
-            translate([0,116,15]) rotate([180,0,0])
-            #rounded_right_triangle(base=18, height=25, r=6, h=15); 
+            translate([0,113,15]) rotate([180,0,0])
+            #rounded_right_triangle(base=18, height=22, r=6, h=15); 
         }
     }
 }
@@ -295,10 +296,10 @@ module engrave_robot() {
 }
 
 //frame();
-translate([-54,0,0]) foot_rest();
+//translate([-54,0,0]) foot_rest();
 //translate([128,0,0]) foot_rest();
 translate([56.5,12,71]) {
-//    mid_brace();
+    mid_brace();
 }
 //ranslate([9,0,190]) top();
 //translate([0,150,0]) frame();
