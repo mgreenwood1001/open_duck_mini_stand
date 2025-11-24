@@ -124,8 +124,10 @@ module frame() {
             trapezoid(height=h, depth=10, bottom_w=w, top_w=110);
             translate([w/2,10,(h/2-10)])
                 rotate([90,0,0]) {
+                    // Side screw
                     m3_hole();
                     
+                    // Side screw
                     translate([0,12,0]) {
                         m3_hole();
                     }
@@ -169,17 +171,19 @@ module frame() {
             }
             
             // screw holes on top
-            translate([20,5,h-5]) {
-                m3();
+            translate([30,5,h-10]) {
+                cylinder(d=3, h=20, $fn=120);
             }
-            translate([128-20,5,h-5]) {
-                m3();
+            translate([128-30,5,h-10]) {
+                cylinder(d=3, h=20, $fn=120);
             }
-            translate([128/2,5,h-5]) {
-                m3();
+            translate([128/2,5,h-10]) {
+                #cylinder(d=3, h=20, $fn=120);
             }
 
         }
+        
+        // Bottom plate
         difference() {
             translate([-54,0,-10])
                 cube([128+(54*2),10,10]);
@@ -203,20 +207,20 @@ module top() {
         
         translate([-9,0,0]) {
 
-            translate([20,5,-3]) {
+            translate([30,5,-3]) {
                 #m3_hole();
             }
-            translate([128-20,5,-3]) {
+            translate([128-30,5,-3]) {
                 #m3_hole();
             }
             translate([128/2,5,-3]) {
                 #m3_hole();
             }
             
-            translate([20,155,-3]) {
+            translate([30,155,-3]) {
                 #m3_hole();
             }
-            translate([128-20,155,-3]) {
+            translate([128-30,155,-3]) {
                 #m3_hole();
             }
             translate([128/2,155,-3]) {
@@ -275,10 +279,10 @@ module mid_brace() {
 module foot_rest() {
     difference() {
         cube([53.5,160,5]);
-        translate([12,5,-16]) #m3();
-        translate([39,5,-16]) #m3();
-        translate([12,155,-16]) #m3();
-        translate([39,155,-16]) #m3();
+        translate([12,5,-12]) #m3();
+        translate([39,5,-12]) #m3();
+        translate([12,155,-12]) #m3();
+        translate([39,155,-12]) #m3();
         
         // engraving
         engrave_robot();
@@ -289,17 +293,17 @@ module foot_rest() {
 module engrave_robot() {
 
     // adjust size and placement until it fits your rectangle
-    translate([-12, 42, 4.5])   // move position on plate
+    translate([-12, 42, 5])   // move position on plate
     linear_extrude(height=1)  // depth of engraving
         scale([1.1,1.1])       // shrink SVG to fit
             import("duck.svg");
 }
 
 //frame();
-//translate([-54,0,0]) foot_rest();
+translate([-54,0,0]) foot_rest();
 //translate([128,0,0]) foot_rest();
-translate([56.5,12,71]) {
-    mid_brace();
-}
-//ranslate([9,0,190]) top();
+//translate([56.5,12,71]) {
+//    mid_brace();
+//}
+//translate([9,0,190]) top();
 //translate([0,150,0]) frame();
